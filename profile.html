@@ -1,175 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>My Profile</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f1f3f6;
-padding:20px;
-}
-
-.header{
-background:#2874f0;
-color:white;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
-
-.header a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-.profile-card{
-max-width:600px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
-}
-
-.profile-card h2{
-margin-bottom:20px;
-}
-
-.info{
-margin-bottom:15px;
-font-size:18px;
-}
-
-.info span{
-font-weight:bold;
-}
-
-.logout-btn{
-background:red;
-color:white;
-border:none;
-padding:12px 20px;
-cursor:pointer;
-border-radius:5px;
-margin-top:20px;
-}
-
-.stats{
-margin-top:20px;
-padding-top:20px;
-border-top:1px solid #ddd;
-}
-
-</style>
+<link rel="stylesheet"
+href="style_v2.css">
 
 </head>
 
 <body>
 
-<div class="header">
+<header class="navbar">
 
-<h2>👤 My Profile</h2>
+    <h2 style="color:white;">
+        My Profile
+    </h2>
 
-<a href="index.html">
-⬅ Back to Home
-</a>
+    <a href="index_v2.html"
+       class="nav-link">
 
-</div>
+        ← Home
 
-<div class="profile-card">
+    </a>
 
-<h2>User Details</h2>
+</header>
 
-<div class="info">
-Name:
-<span id="name">
-Not Registered
-</span>
-</div>
+<div class="profile-container">
 
-<div class="info">
-Email:
-<span id="email">
-Not Registered
-</span>
-</div>
+    <div class="profile-card">
 
-<div class="stats">
+        <img
+        src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+        alt="Profile"
+        class="profile-image">
 
-<div class="info">
-🛒 Cart Items:
-<span id="cartCount">
-0
-</span>
-</div>
+        <h2 id="profileName">
+            Guest User
+        </h2>
 
-<div class="info">
-❤️ Wishlist Items:
-<span id="wishlistCount">
-0
-</span>
-</div>
+        <p id="profileEmail">
+            Not Registered
+        </p>
 
-<div class="info">
-📦 Orders:
-<span id="orderCount">
-0
-</span>
-</div>
+        <hr style="margin:20px 0;">
 
-</div>
+        <div class="profile-stats">
 
-<button
-class="logout-btn"
-id="logoutBtn">
+            <div>
+                <h3 id="cartTotal">0</h3>
+                <p>Cart Items</p>
+            </div>
 
-Logout
+            <div>
+                <h3 id="wishlistTotal">0</h3>
+                <p>Wishlist</p>
+            </div>
 
-</button>
+            <div>
+                <h3 id="ordersTotal">0</h3>
+                <p>Orders</p>
+            </div>
+
+        </div>
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+
+    </div>
 
 </div>
 
 <script>
 
-// USER
-
-// USER
-
 const user =
 JSON.parse(
-localStorage.getItem(
-"user"
-)
+localStorage.getItem("user")
 );
 
 if(user){
 
-document.getElementById(
-"name"
-).textContent =
-user.name;
+    document.getElementById(
+    "profileName"
+    ).textContent = user.name;
 
-document.getElementById(
-"email"
-).textContent =
-user.email;
-
+    document.getElementById(
+    "profileEmail"
+    ).textContent = user.email;
 }
-
-// CART
 
 const cartItems =
 JSON.parse(
@@ -178,26 +103,12 @@ localStorage.getItem(
 )
 ) || [];
 
-document.getElementById(
-"cartCount"
-).textContent =
-cartItems.length;
-
-// WISHLIST
-
 const wishlistItems =
 JSON.parse(
 localStorage.getItem(
 "wishlistItems"
 )
 ) || [];
-
-document.getElementById(
-"wishlistCount"
-).textContent =
-wishlistItems.length;
-
-// ORDERS
 
 const orders =
 JSON.parse(
@@ -207,33 +118,35 @@ localStorage.getItem(
 ) || [];
 
 document.getElementById(
-"orderCount"
+"cartTotal"
+).textContent =
+cartItems.length;
+
+document.getElementById(
+"wishlistTotal"
+).textContent =
+wishlistItems.length;
+
+document.getElementById(
+"ordersTotal"
 ).textContent =
 orders.length;
 
-// LOGOUT
-
-document
-.getElementById(
+document.getElementById(
 "logoutBtn"
-)
-.addEventListener(
-"click",
-()=>{
+).onclick = ()=>{
 
-localStorage.removeItem(
-"user"
-);
+    localStorage.removeItem(
+    "user"
+    );
 
-alert(
-"Logged Out Successfully"
-);
+    alert(
+    "Logged Out Successfully"
+    );
 
-window.location.href =
-"index.html";
-
-}
-);
+    window.location.href =
+    "index_v2.html";
+};
 
 </script>
 

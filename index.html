@@ -1,492 +1,788 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<title>Flipkart Clone</title>
-<link href="./style.css" rel="stylesheet"/>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Flipkart Clone Pro
+</title>
+
+<link
+rel="stylesheet"
+href="style.css">
+
 </head>
+
 <body>
+
+<!-- ==========================
+     NAVBAR
+========================== -->
+
 <header class="navbar">
-<div class="nav-left">
-<img alt="Flipkart logo" class="logo" src="images/flipkart-plus_8d85f4.png"/>
-<div class="search-box">
-<input id="searchInput" placeholder="Search for Products, Brands and More" type="text"/>
-<button>Search</button>
-</div>
-</div>
-<div class="nav-right">
-<div class="login-wrapper">
-<input class="login-toggle" id="login-toggle" type="checkbox"/>
-<label class="more-btn" for="login-toggle">
-<span class="more-text">👤Login</span>
-</label>
-<ul class="login-menu">
-<li class="login-top">
-<span>New customer?</span>
-<a href="#" id="signupLink">Sign Up</a>
-</li>
-<li><a href="#">My Profile</a></li>
-<li><a href="#">Flipkart Plus Zone</a></li>
-<li><a href="#">Orders</a></li>
-<li><a href="#">Wishlist</a></li>
-<li><a href="#">Rewards</a></li>
-<li><a href="#">Gift Cards</a></li>
-</ul>
-</div>
-<a href="#">🏬Become a Seller</a>
-<a href="cart.html">🛒 Cart (<span id="cartCount">0</span>)</a>
-<div class="more-wrapper">
-<button aria-label="More options" class="more-btn">
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="dot"></span>
-<span class="more-text"></span>
-</button>
-<ul class="more-menu">
-<li><a href="#">Notification Preferences</a></li>
-<li><a href="#">24x7 Customer Care</a></li>
-<li><a href="#">Advertise</a></li>
-<li><a href="#">Download App</a></li>
-</ul>
-</div>
-<a href="profile.html">My Profile</a><a href="orders.html">📦 Orders</a><a href="wishlist.html">❤️ Wishlist (<span id="wishlistCount">0</span>)</a></div>
+
+    <div class="nav-left">
+
+        <button
+        class="menu-btn"
+        id="menuBtn">
+
+            ☰
+
+        </button>
+
+        <img
+        src="images/flipkart-plus_8d85f4.png"
+        alt="Flipkart"
+        class="logo">
+
+    </div>
+
+    <div class="search-box">
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for Products, Brands and More">
+
+        <button>
+
+            🔍
+
+        </button>
+
+    </div>
+
+    <div class="nav-right">
+
+        <button
+        id="loginBtn"
+        class="nav-btn">
+
+            👤 Login
+
+        </button>
+
+<a
+href="profile.html"
+class="nav-link">
+
+👤 My Profile
+
+</a>
+
+<a
+href="orders.html"
+class="nav-link">
+
+📦 Orders
+
+</a>
+<a
+    href="wishlist.html"
+    class="nav-link">
+
+        ❤️ Wishlist
+        (
+        <span id="wishlistCount">
+            0
+        </span>
+        )
+
+    </a>
+
+    <a
+    href="cart.html"
+    class="nav-link">
+
+        🛒 Cart
+        (
+        <span id="cartCount">
+            0
+        </span>
+        )
+
+    </a>
 </header>
-<nav class="category-strip">
-<div class="cat-item">
-<img alt="Minutes" src="images/minutes.jpg"/>
-<span>Minutes</span>
-</div>
-<div class="cat-item">
-<img alt="Mobiles &amp; Tablets" src="images/mobiles-tablets.jpg"/>
-<span>Mobiles &amp; Tablets</span>
-</div>
-<div class="cat-item">
-<img alt="Fashion" src="images/fashion.jpg"/>
-<span>Fashion</span>
-</div>
-<div class="cat-item">
-<img alt="Electronics" src="images/electronics.jpg"/>
-<span>Electronics</span>
-</div>
-<div class="cat-item">
-<img alt="TVs &amp; Appliances" src="images/tvs-appliances.jpg"/>
-<span>TVs &amp; Appliances</span>
-</div>
-<div class="cat-item">
-<img alt="Home &amp; Furniture" src="images/home-furniture.jpg"/>
-<span>Home &amp; Furniture</span>
-</div>
-<div class="cat-item">
-<img alt="Flight Bookings" src="images/flight-bookings.jpg"/>
-<span>Flight Bookings</span>
-</div>
-<div class="cat-item">
-<img alt="Beauty, Food, Perfume" src="images/beauty-food-toys.jpg"/>
-<span>Beauty, Food..</span>
-</div>
-<div class="cat-item">
-<img alt="Grocery" src="images/grocery.jpg"/>
-<span>Grocery</span>
-</div>
-</nav>
-<!-- Register Modal -->
-<div id="registerModal" class="modal">
 
-  <div class="modal-content">
+<!-- ==========================
+     MOBILE MENU
+========================== -->
 
-    <span id="closeRegister">&times;</span>
+<div
+class="mobile-menu"
+id="mobileMenu">
 
-    <h2>Create New Account</h2>
+    <a href="profile.html">
+        My Profile
+    </a>
 
-    <input
-      type="text"
-      id="regName"
-      placeholder="Enter Full Name">
+    <a href="orders.html">
+        Orders
+    </a>
 
-    <input
-      type="email"
-      id="regEmail"
-      placeholder="Enter Email">
+    <a href="wishlist.html">
+        Wishlist
+    </a>
 
-    <input
-      type="password"
-      id="regPass"
-      placeholder="Enter Password">
-
-    <button id="registerBtn">
-      Register
-    </button>
-
-  </div>
+    <a href="cart.html">
+        Cart
+    </a>
 
 </div>
-<section class="banner">
-<img alt="Samsung main banner" src="images/samsung_logo.jpg"/>
-</section>
+
+<!-- ==========================
+     CATEGORIES
+========================== -->
+
+<div class="category-wrapper">
+
+    <div class="side-offer">
+        🎁<br>
+        Super Coins
+    </div>
+
+
+    <!-- Minutes -->
+        <div class="cat-item">
+            <img src="images/minutes.jpg">
+            <span>Minutes</span>
+        </div>
+    <div class="category-strip">
+        <div class="cat-item">
+    <img src="images/beauty-food-toys.jpg">
+    <span>Beauty</span>
+</div>
+
+<div class="cat-item">
+    <img src="images/bed.jpg">
+    <span>Beds</span>
+</div>
+
+<div class="cat-item">
+    <img src="images/speaker.jpg">
+    <span>Speakers</span>
+</div>
+       
+
+        <!-- Mobiles -->
+        <div class="cat-item">
+            <img src="images/mobiles-tablets.jpg">
+            <span>Mobiles</span>
+        </div>
+
+        <!-- Fashion -->
+        <div class="cat-item">
+            <img src="images/fashion.jpg">
+            <span>Fashion</span>
+        </div>
+
+        <!-- Electronics -->
+        <div class="cat-item">
+            <img src="images/electronics.jpg">
+            <span>Electronics</span>
+        </div>
+
+        <!-- TV -->
+        <div class="cat-item">
+            <img src="images/tv-unit.jpg">
+            <span>TV & Appliances</span>
+        </div>
+
+        <!-- Furniture -->
+        <div class="cat-item">
+            <img src="images/home-furniture.jpg">
+            <span>Furniture</span>
+        </div>
+
+        <!-- Grocery -->
+        <div class="cat-item">
+            <img src="images/grocery.jpg">
+            <span>Grocery</span>
+        </div>
+
+    </div>
+
+    <div class="side-offer">
+        🚚<br>
+        Free Delivery
+    </div>
+
+</div>
+<!-- ==========================
+     REGISTER MODAL
+========================== -->
+
+<div
+id="registerModal"
+class="modal">
+
+    <div class="modal-content">
+
+        <span
+        id="closeRegister">
+
+            &times;
+
+        </span>
+
+        <h2>
+            Create Account
+        </h2>
+
+        <input
+        type="text"
+        id="regName"
+        placeholder="Full Name">
+
+        <input
+        type="email"
+        id="regEmail"
+        placeholder="Email">
+
+        <input
+        type="password"
+        id="regPass"
+        placeholder="Password">
+
+        <button
+        id="registerBtn">
+
+            Register
+
+        </button>
+
+    </div>
+
+</div>
+
+<button id="darkModeBtn">
+🌙
+</button>
+
+<button id="topBtn">
+⬆
+</button>
+<!-- ==========================
+     HOME ESSENTIALS
+========================== -->
+
 <section class="product-row">
-<div class="row-header">
-<h2>Top Deals on Home Essentials</h2>
-<button class="view-all">VIEW ALL</button>
-</div>
-<div class="product-list">
-<div class="product-card">
-<img alt="Bottles and flasks" src="images/bottle.jpg"/>
-<p class="name">Bottles and flasks</p>
-<p class="offer">From ₹129</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Cookware range" src="images/cookware-range.jpg"/>
-<p class="name">Cookware range</p>
-<p class="offer">From ₹299</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Faucets" src="images/faucets.jpg"/>
-<p class="name">Faucets</p>
-<p class="offer">Up to 80% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Casseroles" src="images/casserole.jpg"/>
-<p class="name">Casseroles</p>
-<p class="offer">From ₹299</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Indoor Plants" src="images/indoor-plants.jpg"/>
-<p class="name">Indoor Plants</p>
-<p class="offer">Up to 85% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Home Emergency Light" src="images/home-emergency.jpg"/>
-<p class="name">Home Emergency Li...</p>
-<p class="offer">Min. 40% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Garden Sprayers" src="images/garden-sprayers.jpg"/>
-<p class="name">Garden Sprayers</p>
-<p class="offer">Up to 75% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Wrist Watches" src="images/gold-wrist-watch.jpg"/>
-<p class="name">Wrist Watches</p>
-<p class="offer">Min. 45% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-</div>
+
+    <div class="row-header">
+
+        <h2>
+            Top Deals On Home Essentials
+        </h2>
+
+        <button class="view-all">
+            View All
+        </button>
+
+    </div>
+
+    <div class="product-list">
+
+        <div class="product-card">
+
+            <img
+            src="images/bottle.jpg"
+            alt="Bottle">
+
+            <h4 class="name">
+                Bottles & Flasks
+            </h4>
+
+            <p class="rating">
+                ⭐⭐⭐⭐☆
+                4.3
+            </p>
+
+            <p class="price">
+                ₹129
+            </p>
+
+            <p class="offer">
+                20% OFF
+            </p>
+
+            <button class="wishlist-btn">
+                ❤️ Wishlist
+            </button>
+
+            <button class="add-cart">
+                🛒 Add To Cart
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img
+            src="images/cookware-range.jpg"
+            alt="Cookware">
+
+            <h4 class="name">
+                Cookware Range
+            </h4>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+                4.8
+            </p>
+
+            <p class="price">
+                ₹299
+            </p>
+
+            <p class="offer">
+                30% OFF
+            </p>
+
+            <button class="wishlist-btn">
+                ❤️ Wishlist
+            </button>
+
+            <button class="add-cart">
+                🛒 Add To Cart
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img
+            src="images/faucets.jpg"
+            alt="Faucets">
+
+            <h4 class="name">
+                Faucets
+            </h4>
+
+            <p class="rating">
+                ⭐⭐⭐⭐☆
+                4.4
+            </p>
+
+            <p class="price">
+                ₹499
+            </p>
+
+            <p class="offer">
+                50% OFF
+            </p>
+
+            <button class="wishlist-btn">
+                ❤️ Wishlist
+            </button>
+
+            <button class="add-cart">
+                🛒 Add To Cart
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img
+            src="images/casserole.jpg"
+            alt="Casserole">
+
+            <h4 class="name">
+                Casseroles
+            </h4>
+
+            <p class="rating">
+                ⭐⭐⭐⭐☆
+                4.1
+            </p>
+
+            <p class="price">
+                ₹299
+            </p>
+
+            <p class="offer">
+                25% OFF
+            </p>
+
+            <button class="wishlist-btn">
+                ❤️ Wishlist
+            </button>
+
+            <button class="add-cart">
+                🛒 Add To Cart
+            </button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img
+            src="images/indoor-plants.jpg"
+            alt="Plants">
+
+            <h4 class="name">
+                Indoor Plants
+            </h4>
+
+            <p class="rating">
+                ⭐⭐⭐⭐⭐
+                4.9
+            </p>
+
+            <p class="price">
+                ₹399
+            </p>
+
+            <p class="offer">
+                35% OFF
+            </p>
+
+            <button class="wishlist-btn">
+                ❤️ Wishlist
+            </button>
+
+            <button class="add-cart">
+                🛒 Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
 </section>
+<!-- ==========================
+     TVs & Appliances
+========================== -->
+
 <section class="product-row">
-<div class="row-header">
-<h2>Top Deals On TVs &amp; Appliances</h2>
-<button class="view-all">VIEW ALL</button>
-</div>
-<div class="product-list">
-<div class="product-card">
-<img alt="Shoe Rack" src="images/shoe-rack-01.jpg"/>
-<p class="name">Shoe Rack</p>
-<p class="offer">From ₹279</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Portable laptop table" src="images/portable-laptop-table-01.jpg"/>
-<p class="name">Portable laptop table</p>
-<p class="offer">From ₹399</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Home Temple" src="images/refrigerator_1.jpg"/>
-<p class="name">Refrigerator</p>
-<p class="offer">From ₹14999</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Space Saving Furniture" src="images/space-saving-furniture-01.jpg"/>
-<p class="name">Space Saving Furniture</p>
-<p class="offer">From ₹599</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Recliner" src="images/recliner-01.jpg"/>
-<p class="name">Recliner</p>
-<p class="offer">From ₹9999</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Chairs" src="images/chairs-01.jpg"/>
-<p class="name">Chairs</p>
-<p class="offer">From ₹2990</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Marq tv" src="images/marq.jpg"/>
-<p class="name">Marq Tv's</p>
-<p class="offer">Min. 30% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Acer LED TV" src="images/acer.jpg"/>
-<p class="name">Acer Led Tv's</p>
-<p class="offer">Min. 20% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-</div>
+
+    <div class="row-header">
+
+        <h2>
+            Top Deals On TVs & Appliances
+        </h2>
+
+        <button class="view-all">
+            View All
+        </button>
+
+    </div>
+
+    <div class="product-list">
+
+        <div class="product-card">
+            <img src="images/refrigerator.jpg" alt="Refrigerator">
+            <h4 class="name">Refrigerator</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.4</p>
+            <p class="price">₹14999</p>
+            <p class="offer">35% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/marq.jpg" alt="TV">
+            <h4 class="name">MarQ Smart TV</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.5</p>
+            <p class="price">₹18999</p>
+            <p class="offer">30% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/acer.jpg" alt="Acer TV">
+            <h4 class="name">Acer Smart TV</h4>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.8</p>
+            <p class="price">₹22999</p>
+            <p class="offer">20% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/fan-geyser.jpg" alt="Fan">
+            <h4 class="name">Fan & Geyser</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.2</p>
+            <p class="price">₹799</p>
+            <p class="offer">40% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/printer-01.jpg" alt="Mixer">
+            <h4 class="name">Printer</h4>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.7</p>
+            <p class="price">₹3999</p>
+            <p class="offer">25% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/Airfryer.jpg" alt="Air Fryer">
+            <h4 class="name">Air Fryer</h4>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.9</p>
+            <p class="price">₹2999</p>
+            <p class="offer">40% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+    </div>
+
 </section>
+<!-- ==========================
+     TOP ELECTRONICS
+========================== -->
+
 <section class="product-row">
-<div class="row-header">
-<h2>Top Deals</h2>
-<button class="view-all">VIEW ALL</button>
-</div>
-<div class="product-list">
-<div class="product-card">
-<img alt="Projector" src="images/projector-01.jpg"/>
-<p class="name">Projector</p>
-<p class="offer">From ₹6990</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Best Selling Mobile Speaker" src="images/bluetooth-speaker-01.jpg"/>
-<p class="name">Best Selling Mobile S...</p>
-<p class="offer">From ₹2499*</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Monitors" src="images/monitor-01.jpg"/>
-<p class="name">Monitors</p>
-<p class="offer">From ₹6599</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Fastrack Smartwatch" src="images/fastrack-smartwatch-01.jpg"/>
-<p class="name">Fastrack Smartwatch...</p>
-<p class="offer">From ₹1399</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Printers" src="images/printer-01.jpg"/>
-<p class="name">Printers</p>
-<p class="offer">From ₹2336</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Monitors" src="images/monitor-02.jpg"/>
-<p class="name">Monitors</p>
-<p class="offer">From ₹7949</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Baby Diapers" src="images/baby_diaper.jpg"/>
-<p class="name">Baby Diapers</p>
-<p class="offer">Min. 30% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Shoes" src="images/mens-casual-shoes.jpg"/>
-<p class="name">Shoes</p>
-<p class="offer">Min. 50% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-</div>
+
+    <div class="row-header">
+
+        <h2>
+            Top Electronics & Furnitures
+        </h2>
+
+        <button class="view-all">
+            View All
+        </button>
+
+    </div>
+
+    <div class="product-list">
+
+        <div class="product-card">
+            <img src="images/projector-01.jpg">
+            <h4 class="name">Projector</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.4</p>
+            <p class="price">₹6990</p>
+            <p class="offer">15% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/monitor-01.jpg">
+            <h4 class="name">Monitor</h4>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.8</p>
+            <p class="price">₹6599</p>
+            <p class="offer">20% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/printer-01.jpg">
+            <h4 class="name">Printer</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.3</p>
+            <p class="price">₹2336</p>
+            <p class="offer">18% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/apple-ipad.jpg">
+            <h4 class="name">Apple iPad</h4>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.9</p>
+            <p class="price">₹34999</p>
+            <p class="offer">10% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/sofa-bed.jpg">
+            <h4 class="name">Sofa</h4>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.7</p>
+            <p class="price">₹12999</p>
+            <p class="offer">25% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/recliner-01.jpg">
+            <h4 class="name">Recliner</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.2</p>
+            <p class="price">₹4999</p>
+            <p class="offer">30% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+    </div>
+
 </section>
+<!-- ==========================
+     FASHION PICKS
+========================== -->
+
 <section class="product-row">
-<div class="row-header">
-<h2>Top deals on appliances</h2>
-<button class="view-all">VIEW ALL</button>
-</div>
-<div class="product-list">
-<div class="product-card">
-<img alt="Kitchen Essentials" src="images/kitchen-essentials-mixer.jpg"/>
-<p class="name">Kitchen Essentials</p>
-<p class="offer">From ₹1249</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Home Essentials" src="images/home-essentials-purifier.jpg"/>
-<p class="name">Home Essentials</p>
-<p class="offer">Shop Now!</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Fans &amp; Geysers" src="images/fan-geyser.jpg"/>
-<p class="name">Fans &amp; Geysers</p>
-<p class="offer">From ₹799</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Mixer &amp; Grinder" src="images/mixer.jpg"/>
-<p class="name">Mixer &amp; Grinder</p>
-<p class="offer">Under ₹1999</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Airfryer" src="images/Airfryer.jpg"/>
-<p class="name">Airfryer</p>
-<p class="offer">Min. 40% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Refrigerator" src="images/refrigerator.jpg"/>
-<p class="name">Refrigerator SidebySide</p>
-<p class="offer">Min. 35% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Double Door Refrigerator" src="images/refrigerator_1.jpg"/>
-<p class="name">Double Door Refrigerator</p>
-<p class="offer">Min. 30% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Trimmers" src="images/trimmer-kit.jpg"/>
-<p class="name">Trimmers</p>
-<p class="offer">Min. 50% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-</div>
+
+    <div class="row-header">
+
+        <h2>
+            Fashion Picks
+        </h2>
+
+        <button class="view-all">
+            View All
+        </button>
+
+    </div>
+
+    <div class="product-list">
+
+        <div class="product-card">
+            <img src="images/heels-sandals.jpg">
+            <h4 class="name">Heels & Sandals</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.3</p>
+            <p class="price">₹999</p>
+            <p class="offer">40% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/sports-shoes.jpg">
+            <h4 class="name">Sports Shoes</h4>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.8</p>
+            <p class="price">₹1499</p>
+            <p class="offer">35% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/perfume-bottle.jpg">
+            <h4 class="name">Perfume</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.4</p>
+            <p class="price">₹699</p>
+            <p class="offer">20% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+       <div class="product-card">
+            <img src="images/Mobile_holder.jpg">
+            <h4 class="name">Mobile Holder</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.3</p>
+            <p class="price">₹299</p>
+            <p class="offer">15% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/helmet.jpg">
+            <h4 class="name">Helmet</h4>
+            <p class="rating">⭐⭐⭐⭐⭐ 4.8</p>
+            <p class="price">₹1199</p>
+            <p class="offer">25% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/riding-gloves.jpg">
+            <h4 class="name">Riding Gloves</h4>
+            <p class="rating">⭐⭐⭐⭐☆ 4.4</p>
+            <p class="price">₹499</p>
+            <p class="offer">30% OFF</p>
+            <button class="wishlist-btn">❤️ Wishlist</button>
+            <button class="add-cart">🛒 Add To Cart</button>
+        </div>
+    </div>
+
 </section>
-<section class="product-row">
-<div class="row-header">
-<h2>Top Deals</h2>
-<button class="view-all">VIEW ALL</button>
-</div>
-<div class="product-list">
-<div class="product-card">
-<img alt="Apple iPads" src="images/apple-ipad.jpg"/>
-<p class="name">Apple iPads</p>
-<p class="offer">From ₹34999</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Instruments" src="images/guitar-instrument.jpg"/>
-<p class="name">Instruments</p>
-<p class="offer">From ₹1599</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Instax Cameras" src="images/instax-camera.jpg"/>
-<p class="name">Instax Cameras</p>
-<p class="offer">From ₹2999</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Perfume &amp; more" src="images/perfume-bottle.jpg"/>
-<p class="name">Perfume &amp; more</p>
-<p class="offer">From ₹199</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Camera Bags" src="images/camera-bag.jpg"/>
-<p class="name">Camera Bags</p>
-<p class="offer">From ₹999</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Heels" src="images/heels-sandals.jpg"/>
-<p class="name">Women Heels</p>
-<p class="offer">From ₹499</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Shoes" src="images/sports-shoes.jpg"/>
-<p class="name">Adidas Sneakers</p>
-<p class="offer">From ₹1999</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Baby Diapers" src="images/baby_diaper.jpg"/>
-<p class="name">Baby Diapers</p>
-<p class="offer">Min. 30% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-</div>
-</section>
-<section class="product-row">
-<div class="row-header">
-<h2>Top Deals on Auto Accessories</h2>
-<button class="view-all">VIEW ALL</button>
-</div>
-<div class="product-list">
-<div class="product-card">
-<img alt="Helmet" src="images/helmet.jpg"/>
-<p class="name">Helmets</p>
-<p class="offer">Min. 50% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Bike Light Bulb" src="images/bike-light-bulb.jpg"/>
-<p class="name">Headlights/FOG Lamps</p>
-<p class="offer">Min. 50% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Riding Gloves" src="images/riding-gloves.jpg"/>
-<p class="name">Riding Gloves</p>
-<p class="offer">Min. 50% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Vehicle Washing Cloth" src="images/vehicle-washing-cloth.jpg"/>
-<p class="name">Car/Bike Cleaning</p>
-<p class="offer">Min. 50% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Car Sticker Decal" src="images/car-sticker-decal.jpg"/>
-<p class="name">Stickers &amp; Decals</p>
-<p class="offer">Min. 50% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Bike Body Cover" src="images/bike-body-cover.jpg"/>
-<p class="name">Bike Covers</p>
-<p class="offer">Min. 50% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Car Air Freshener" src="images/car-air-freshener.jpg"/>
-<p class="name">Air Fresheners</p>
-<p class="offer">Min. 50% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-<div class="product-card">
-<img alt="Mobile Holder" src="images/Mobile_holder.jpg"/>
-<p class="name">Mobile Holder</p>
-<p class="offer">Min. 80% Off</p>
-<button class="wishlist-btn">❤️</button><button class="add-cart">Add To Cart</button></div>
-</div>
-</section>
-<section class="product-row">
-<img alt="Flipkart section screenshot" class="full-row-image" src="images/Screenshot 2025-12-26 152543.png"/>
-</section>
+
 <footer class="footer">
-<div class="footer-top">
-<div class="footer-column">
-<h3>About</h3>
-<a href="#">Contact Us</a>
-<a href="#">About Us</a>
-<a href="#">Careers</a>
-<a href="#">Flipkart Stories</a>
-</div>
-<div class="footer-column">
-<h3>Help</h3>
-<a href="#">Payments</a>
-<a href="#">Shipping</a>
-<a href="#">Cancellation &amp; Returns</a>
-<a href="#">FAQ</a>
-</div>
-<div class="footer-column">
-<h3>Policy</h3>
-<a href="#">Return Policy</a>
-<a href="#">Terms Of Use</a>
-<a href="#">Security</a>
-<a href="#">Privacy</a>
-</div>
-<div class="footer-column">
-<h3>Mail Us</h3>
-<p>Flipkart Internet Pvt Ltd,<br/>
-           Bengaluru, India</p>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2025 Anivaran's Flipkart Clone Project</p>
-</div>
+
+    <div class="footer-top">
+
+        <div class="footer-column">
+
+            <h3>About</h3>
+
+            <a href="profile.html">
+                My Profile
+            </a>
+
+            <a href="#">
+                About Us
+            </a>
+
+            <a href="#">
+                Careers
+            </a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Help</h3>
+
+            <a href="#">
+                Payments
+            </a>
+
+            <a href="#">
+                Shipping
+            </a>
+
+            <a href="#">
+                FAQ
+            </a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Policy</h3>
+
+            <a href="#">
+                Return Policy
+            </a>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Contact</h3>
+
+            <a href="mailto:anivarandubey@gmail.com">
+                Email Us
+            </a>
+
+            <a href="tel:+919999999999">
+                Call Us
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Flipkart Clone Pro |
+        Created By Anivaran Dubey
+
+    </div>
 </footer>
 
-<div class="modal" id="loginModal">
-<div class="modal-content">
-<h2>Login</h2>
-<input placeholder="Email" type="email"/>
-<input placeholder="Password" type="password"/>
-<button>Login</button>
-</div>
-</div>
-<button id="darkModeBtn">🌙</button>
-<button id="topBtn">⬆</button>
 <script src="script.js"></script>
-<div id="registerModal" class="modal">
 
-<div class="modal-content">
-
-<h2>Register</h2>
-
-<input
-type="text"
-id="regName"
-placeholder="Name">
-
-<input
-type="email"
-id="regEmail"
-placeholder="Email">
-
-<input
-type="password"
-id="regPass"
-placeholder="Password">
-
-<button id="registerBtn">
-Register
-</button>
-
-</div>
-
-</div>
 </body>
 </html>
