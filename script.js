@@ -1,8 +1,13 @@
 // ======================
 // PAGE LOAD
 // ======================
-
 window.addEventListener("DOMContentLoaded", () => {
+
+    if (
+        localStorage.getItem("darkMode") === "true"
+    ) {
+        document.body.classList.add("dark");
+    }
 
     updateCounters();
     setupSearch();
@@ -14,7 +19,6 @@ window.addEventListener("DOMContentLoaded", () => {
     setupScrollTop();
 
 });
-
 // ======================
 // COUNTERS
 // ======================
@@ -243,7 +247,20 @@ function setupCartButtons() {
                             localStorage.getItem("cartItems")
                         ) || [];
 
-                    cartItems.push(item);
+                  const existing =
+cartItems.find(
+    p => p.name === item.name
+);
+
+if(existing){
+
+    existing.quantity++;
+
+}else{
+
+    cartItems.push(item);
+
+}
 
                     localStorage.setItem(
                         "cartItems",
@@ -297,7 +314,16 @@ function setupWishlistButtons() {
                             localStorage.getItem("wishlistItems")
                         ) || [];
 
-                    wishlistItems.push(item);
+                   const exists =
+wishlistItems.find(
+    p => p.name === item.name
+);
+
+if(!exists){
+
+    wishlistItems.push(item);
+
+}
 
                     localStorage.setItem(
                         "wishlistItems",
@@ -329,9 +355,13 @@ function setupDarkMode() {
 
     darkBtn.onclick = () => {
 
-        document.body.classList.toggle(
-            "dark"
+        document.body.classList.toggle("dark");
+
+        localStorage.setItem(
+            "darkMode",
+            document.body.classList.contains("dark")
         );
+
     };
 }
 

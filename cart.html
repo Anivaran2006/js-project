@@ -98,15 +98,38 @@ function loadCart(){
     let grandTotal = 0;
 
     container.innerHTML = "";
+     if(cartItems.length === 0){
 
+    container.innerHTML = `
+    <h2 style="
+    text-align:center;
+    margin-top:50px;">
+    Cart Is Empty
+    </h2>
+    `;
+
+    document.querySelector(
+    ".checkout-box"
+    ).style.display = "none";
+
+    return;
+}
     cartItems.forEach(
         (item,index)=>{
 
-            let price =
-            parseInt(
-                item.price
-                .replace("₹","")
-            ) || 0;
+           let price = 0;
+
+if(item.price){
+
+    price =
+    parseInt(
+        item.price.replace(
+            /[^\d]/g,
+            ""
+        )
+    ) || 0;
+
+}
 
             grandTotal +=
             price *
@@ -303,7 +326,7 @@ document
         .value,
 
         status:
-        "Pending",
+        "Order Received",
 
         items:
         cartItems
