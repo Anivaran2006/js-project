@@ -149,9 +149,29 @@ body{
     margin:12px;
 }
 
+.banner{
+    margin:15px;
+}
+
 .banner img{
     width:100%;
+    max-height:400px;
+    object-fit:cover;
     border-radius:10px;
+    display:block;
+}
+
+@media(max-width:768px){
+
+    .banner{
+        margin:8px;
+    }
+
+    .banner img{
+        max-height:180px;
+        border-radius:8px;
+    }
+
 }
 
 /* =========================
